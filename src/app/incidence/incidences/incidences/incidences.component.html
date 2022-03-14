@@ -1,0 +1,68 @@
+<p>incidences works!</p>
+<div class="margin">
+    <mat-card>
+        <mat-card-title>
+            Lista de Exames por Região
+        </mat-card-title>
+        <table matSort (matSortChange)="regions">
+            <tr>
+            <th mat-sort-header="id">ID</th>
+            <th mat-sort-header="region">Região</th>
+            <th mat-sort-header="num_exams">N° de Exames</th>
+        
+            </tr>
+        
+            <tr *ngFor="let element of regions">
+            <td>{{element.id}}</td>
+            <td>{{element.region}}</td>
+            <td>{{element.num_exams}}</td>      
+            </tr>
+        </table>
+    </mat-card>    
+</div>
+<div class="margin">
+    <mat-card>
+        <mat-card-title>
+            Lista de faixa etária
+        </mat-card-title>
+        <table matSort (matSortChange)="ageGroups">
+            <tr>
+            <th mat-sort-header="id">ID</th>
+            <th mat-sort-header="range_i">Range Inicial</th>
+            <th mat-sort-header="range_n">Range Final</th>
+            <th mat-sort-header="descriptor">Descrição</th>
+            </tr>
+        
+            <tr *ngFor="let element of ageGroups">
+            <td>{{element.id}}</td>
+            <td>{{element.range_i}}</td>
+            <td>{{element.range_n}}</td>      
+            <td>{{element.descriptor}}</td>
+            </tr>
+        </table>
+    </mat-card>    
+</div>
+<div class="margin">
+    <mat-card>
+        <mat-card-title>
+            Lista de Incidencias
+        </mat-card-title>
+        <table matSort (matSortChange)="incidences">
+            <tr>
+            <th mat-sort-header="id">ID</th>
+            <th mat-sort-header="age_group_id">Id da faixa etária</th>
+            <th mat-sort-header="mouth">Mes de Incidencia</th>
+            <th mat-sort-header="num_exams">N° de exames</th>
+            <th mat-sort-header="region_id">Id da Região</th>
+            </tr>
+        
+            <tr *ngFor="let element of incidences">
+            <td>{{element.id}}</td>
+            <td>{{element.age_group_id}}</td>
+            <td>{{element.mouth}}</td>      
+            <td>{{element.num_exams}}</td>
+            <td>{{element.region_id}}</td>
+            </tr>
+        </table>
+    </mat-card>    
+</div>
